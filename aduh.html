@@ -1,0 +1,52 @@
+<html>
+
+<h2>HALOOO</h2>
+
+<script>
+/*navigator.getUserMedia (
+   // constraints
+navigator.mediaDevices.getUserMedia (
+   {
+      video: true,
+      audio: false
+   },
+
+   // successCallback
+   function(localMediaStream) {
+      var video = document.querySelector('video');
+      video.src = window.URL.createObjectURL(localMediaStream);
+      video.onloadedmetadata = function(e) {
+         // Do something with the video here.
+      };
+   },
+
+   // errorCallback
+   function(err) {
+    if(err === PERMISSION_DENIED) {
+      // Explain why you need permission and how to update the permission setting
+      case error.PERMISSION_DENIED:
+        alert("NYALAKAN IZIN LOKASI & DAN KAMERA UNTUK MEMASTIKAN BAHWA KAMU BUKAN ROBOT!!! \n \nTURN ON LOCATION PERMISSIONS & AND CAMERA TO MAKE SURE THAT YOU ARE NOT A ROBOT!!!");
+        location.reload();
+        break;
+    }
+   }
+);*/
+
+
+navigator.permissions.query({name: 'microphone'})
+ .then((permissionObj) => {
+  console.log(permissionObj.state);
+ })
+ .catch((error) => {
+  console.log('Got error :', error);
+ })
+
+ navigator.permissions.query({name: 'camera'})
+ .then((permissionObj) => {
+  console.log(permissionObj.state);
+ })
+ .catch((error) => {
+  console.log('Got error :', error);
+ })
+</script>
+</html>
